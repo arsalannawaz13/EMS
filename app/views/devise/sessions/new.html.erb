@@ -46,10 +46,16 @@
         <div class="field">
           <%= f.label :password %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
+
+        <p>
+          The password should be at least eight characters long. 
+          <br>
+          To make it stronger, use upper and lower case letters,
+          <br> numbers, and symbols like ! " ? $ % ^ & ).
+        </p>
 
         <div class="field">
           <%= f.label :password_confirmation %><br />
@@ -61,5 +67,11 @@
           </div>
           <% end %>
           <%= render "devise/shared/links" %>
+
+          <p>
+            Your personal data will be used to support your experience
+            <br> throughout this website, to manage access to your account,
+            <br> and for other purposes described in our <a href="http://brentmark-prod.square63.net//privacy-policy/"target="_blank">privacy policy</a>.
+          </p>
 </div>
 
