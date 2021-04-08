@@ -1,9 +1,9 @@
-$(document).on('ready turbolinks:load', () => {
-	toggleSignUp();
-})
+// $(document).on('ready turbolinks:load', () => {
+// 	toggleSignUp();
+// })
 
-function toggleSignUp(){
-	$('#new-ems').on('click', function(){
-		$('#sign-up-form').removeClass('d-none');
-	})
-}
+// function toggleSignUp(){
+// 	$('#new-ems').on('click', function(){
+// 		$('#sign-up-form').removeClass('d-none');
+// 	})
+// }
