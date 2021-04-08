@@ -17,7 +17,6 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-
 gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -29,6 +28,8 @@ gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
+gem "letter_opener", :group => :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
