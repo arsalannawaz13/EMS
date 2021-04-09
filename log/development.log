@@ -6396,3 +6396,1235 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 13606)
 
 
+Started GET "/" for ::1 at 2021-04-09 13:13:10 +0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 238)
+  Rendered layout layouts/application.html.erb (Duration: 1341.0ms | Allocations: 1482761)
+Completed 200 OK in 1369ms (Views: 1346.6ms | ActiveRecord: 0.0ms | Allocations: 1486263)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:13:19 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 842)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 236)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 264)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 19.0ms | Allocations: 9628)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 21965)
+Completed 200 OK in 56ms (Views: 33.5ms | ActiveRecord: 5.3ms | Allocations: 36166)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:13:55 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 671)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 228)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 264)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 3941)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 16610)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 18392)
+
+
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for inspect */ LIMIT 11[0m
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:14:35 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`login` = 'Arsalan Nawaz' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms | Allocations: 6066)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'users.login' in 'where clause'):
+  
+mysql2 (0.5.3) lib/mysql2/client.rb:131:in `_query'
+mysql2 (0.5.3) lib/mysql2/client.rb:131:in `block in query'
+mysql2 (0.5.3) lib/mysql2/client.rb:130:in `handle_interrupt'
+mysql2 (0.5.3) lib/mysql2/client.rb:130:in `query'
+rack-mini-profiler (2.3.1) lib/patches/db/mysql2/alias_method.rb:25:in `block in query'
+rack-mini-profiler (2.3.1) lib/patches/sql_patches.rb:12:in `record_sql'
+rack-mini-profiler (2.3.1) lib/patches/db/mysql2/alias_method.rb:24:in `query'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:206:in `block (2 levels) in execute'
+activesupport (6.1.3.1) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (6.1.3.1) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (6.1.3.1) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:205:in `block in execute'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:696:in `block (2 levels) in log'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:695:in `block in log'
+activesupport (6.1.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:687:in `log'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:204:in `execute'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/mysql/database_statements.rb:50:in `execute'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:215:in `execute_and_free'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/mysql/database_statements.rb:55:in `exec_query'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:532:in `select'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:69:in `select_all'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/query_cache.rb:101:in `block in select_all'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/query_cache.rb:118:in `block in cache_sql'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/query_cache.rb:109:in `cache_sql'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/query_cache.rb:101:in `select_all'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/mysql/database_statements.rb:12:in `select_all'
+activerecord (6.1.3.1) lib/active_record/querying.rb:47:in `find_by_sql'
+activerecord (6.1.3.1) lib/active_record/relation.rb:849:in `block in exec_queries'
+activerecord (6.1.3.1) lib/active_record/relation.rb:867:in `skip_query_cache_if_necessary'
+activerecord (6.1.3.1) lib/active_record/relation.rb:834:in `exec_queries'
+activerecord (6.1.3.1) lib/active_record/relation.rb:638:in `load'
+activerecord (6.1.3.1) lib/active_record/relation.rb:249:in `records'
+activerecord (6.1.3.1) lib/active_record/relation.rb:244:in `to_ary'
+activerecord (6.1.3.1) lib/active_record/relation/finder_methods.rb:553:in `find_nth_with_limit'
+activerecord (6.1.3.1) lib/active_record/relation/finder_methods.rb:538:in `find_nth'
+activerecord (6.1.3.1) lib/active_record/relation/finder_methods.rb:122:in `first'
+orm_adapter (0.5.0) lib/orm_adapter/adapters/active_record.rb:22:in `find_first'
+devise (4.7.3) lib/devise/models/authenticatable.rb:276:in `find_first_by_auth_conditions'
+devise (4.7.3) lib/devise/models/authenticatable.rb:272:in `find_for_authentication'
+devise (4.7.3) lib/devise/models/database_authenticatable.rb:236:in `find_for_database_authentication'
+devise (4.7.3) lib/devise/strategies/database_authenticatable.rb:10:in `authenticate!'
+warden (1.2.9) lib/warden/strategies/base.rb:55:in `_run!'
+warden (1.2.9) lib/warden/proxy.rb:372:in `block in _run_strategies_for'
+warden (1.2.9) lib/warden/proxy.rb:365:in `each'
+warden (1.2.9) lib/warden/proxy.rb:365:in `_run_strategies_for'
+warden (1.2.9) lib/warden/proxy.rb:335:in `_perform_authentication'
+warden (1.2.9) lib/warden/proxy.rb:133:in `authenticate!'
+devise (4.7.3) app/controllers/devise/sessions_controller.rb:19:in `create'
+actionpack (6.1.3.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.3.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.3.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.3.1) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.3.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.1.3.1) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:14:51 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 278)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2638)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 15190)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 15922)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:20:04 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 282)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2645)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 15050)
+Completed 200 OK in 28ms (Views: 14.1ms | ActiveRecord: 0.8ms | Allocations: 26710)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:20:15 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan nawaz' OR lower(email) = 'arsalan nawaz') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 2, `users`.`current_sign_in_at` = '2021-04-09 08:20:15', `users`.`updated_at` = '2021-04-09 08:20:15.463269' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 258ms (ActiveRecord: 9.0ms | Allocations: 7552)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:20:15 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 12548)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 13615)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:20:30 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 263)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2515)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 14959)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 15505)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:20:46 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"arsalan.nawaz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan.nawaz@gmail.com' OR lower(email) = 'arsalan.nawaz@gmail.com') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 3, `users`.`current_sign_in_at` = '2021-04-09 08:20:47', `users`.`last_sign_in_at` = '2021-04-09 08:20:15', `users`.`updated_at` = '2021-04-09 08:20:47.021832' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 242ms (ActiveRecord: 5.2ms | Allocations: 5382)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:20:47 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 12457)
+Completed 200 OK in 36ms (Views: 35.8ms | ActiveRecord: 0.0ms | Allocations: 12849)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:21:11 +0500
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms | Allocations: 1504)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:21:11 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 12455)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 12848)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:24:45 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 122)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 12762)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 13984)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:25:17 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 3638)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 3708)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 4907)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `destroy_standard_user_session_path' for #<ActionView::Base:0x007fd23cd7ce20>
+Did you mean?  destroy_user_session_path):
+    1: <h1>Home#index</h1>
+    2: <p>Find me in app/views/home/index.html.erb</p>
+    3: <%=link_to "Sign Out", destroy_standard_user_session_path, :method => :delete%>
+  
+app/views/home/index.html.erb:3
+Started GET "/" for ::1 at 2021-04-09 13:25:51 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 179)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 12818)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 14034)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 13:25:53 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 0.8ms | Allocations: 5313)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:25:53 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 77)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 12500)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 12887)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:28:23 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 671)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 228)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 264)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3949)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 16393)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 17948)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:28:52 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2509)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 14950)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 15494)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:29:08 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan nawaz' OR lower(email) = 'arsalan nawaz') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mUser Update All (3.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`failed_attempts` = COALESCE(`users`.`failed_attempts`, 0) + 1 WHERE `users`.`id` = 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 401 Unauthorized in 245ms (ActiveRecord: 5.6ms | Allocations: 4075)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2490)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 14887)
+Completed 200 OK in 247ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 15428)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:29:24 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan nawaz' OR lower(email) = 'arsalan nawaz') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = '2021-04-09 08:29:24', `users`.`updated_at` = '2021-04-09 08:29:24.908798' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`failed_attempts` = 0, `users`.`updated_at` = '2021-04-09 08:29:24.916657' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 4, `users`.`current_sign_in_at` = '2021-04-09 08:29:24', `users`.`last_sign_in_at` = '2021-04-09 08:20:47', `users`.`updated_at` = '2021-04-09 08:29:24.922051' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 258ms (ActiveRecord: 12.0ms | Allocations: 13196)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:29:24 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 77)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 12503)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 12894)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 13:29:27 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = NULL, `users`.`updated_at` = '2021-04-09 08:29:27.053343' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 5.1ms | Allocations: 4999)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:29:27 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 12497)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 12883)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:29:31 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 14934)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 15529)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:29:46 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan nawaz' OR lower(email) = 'arsalan nawaz') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = '2021-04-09 08:29:46', `users`.`updated_at` = '2021-04-09 08:29:46.413431' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 5, `users`.`current_sign_in_at` = '2021-04-09 08:29:46', `users`.`last_sign_in_at` = '2021-04-09 08:29:24', `users`.`updated_at` = '2021-04-09 08:29:46.423035' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 254ms (ActiveRecord: 8.7ms | Allocations: 8917)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:29:46 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 12493)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 12883)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 13:29:49 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = NULL, `users`.`updated_at` = '2021-04-09 08:29:49.037138' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 4.9ms | Allocations: 4998)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:29:49 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 12494)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 12880)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:29:54 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 62.1ms | Allocations: 14935)
+Completed 200 OK in 64ms (Views: 62.8ms | ActiveRecord: 0.0ms | Allocations: 15531)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:32:21 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan nawaz' OR lower(email) = 'arsalan nawaz') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = '2021-04-09 08:32:22', `users`.`updated_at` = '2021-04-09 08:32:22.006841' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 6, `users`.`current_sign_in_at` = '2021-04-09 08:32:22', `users`.`last_sign_in_at` = '2021-04-09 08:29:46', `users`.`updated_at` = '2021-04-09 08:32:22.015708' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 249ms (ActiveRecord: 8.7ms | Allocations: 8930)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:32:22 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 12493)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 12883)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 13:32:23 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = NULL, `users`.`updated_at` = '2021-04-09 08:32:23.707877' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 4.8ms | Allocations: 4998)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:32:23 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 12494)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 12880)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:32:28 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2497)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 14938)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 15533)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:32:50 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"arsalan.nawaz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan.nawaz@gmail.com' OR lower(email) = 'arsalan.nawaz@gmail.com') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = '2021-04-09 08:32:50', `users`.`updated_at` = '2021-04-09 08:32:50.712694' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 7, `users`.`current_sign_in_at` = '2021-04-09 08:32:50', `users`.`last_sign_in_at` = '2021-04-09 08:32:22', `users`.`updated_at` = '2021-04-09 08:32:50.720238' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 248ms (ActiveRecord: 7.9ms | Allocations: 8917)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:32:50 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 12493)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 12883)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 13:32:52 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = NULL, `users`.`updated_at` = '2021-04-09 08:32:52.082268' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 4.2ms | Allocations: 4999)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:32:52 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 12494)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 12880)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:32:55 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 14934)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 15529)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:33:13 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"arsalan.nawaz2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan.nawaz2@gmail.com' OR lower(email) = 'arsalan.nawaz2@gmail.com') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+Completed 401 Unauthorized in 236ms (ActiveRecord: 1.0ms | Allocations: 1437)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:33:13 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 14936)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 15540)
+
+
+Started POST "/users" for ::1 at 2021-04-09 13:33:46 +0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"full_name"=>"Arsalan Nawaz", "email"=>"arsalan.nawaz3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`full_name` = 'Arsalan Nawaz' LIMIT 1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'arsalan.nawaz3@gmail.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 629)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 255)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2944)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 15327)
+Completed 200 OK in 260ms (Views: 15.7ms | ActiveRecord: 2.9ms | Allocations: 22762)
+
+
+Started POST "/users" for ::1 at 2021-04-09 13:34:10 +0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"full_name"=>"Arsalan Nawaz3", "email"=>"arsalan.nawaz3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`full_name` = 'Arsalan Nawaz3' LIMIT 1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'arsalan.nawaz3@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (3.1ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `created_at`, `updated_at`, `full_name`) VALUES ('arsalan.nawaz3@gmail.com', '$2a$12$HxAEn8wHJARdahP9S53EC.Yg46.HRcIh1iJL6tJJPMKEsitWAWaWi', 'mTB4Rzk-Dsu9jxm1KM2s', '2021-04-09 08:34:10', '2021-04-09 08:34:10.780519', '2021-04-09 08:34:10.780519', 'Arsalan Nawaz3')[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 0.8ms | Allocations: 270)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 4.7ms
+Delivered mail 60701182ca6a1_1664d3fe91ceddf9c16336@Apples-MacBook-Pro.local.mail (8.6ms)
+Date: Fri, 09 Apr 2021 13:34:10 +0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: arsalan.nawaz3@gmail.com
+Message-ID: <60701182ca6a1_1664d3fe91ceddf9c16336@Apples-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome arsalan.nawaz3@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=mTB4Rzk-Dsu9jxm1KM2s">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 298ms (ActiveRecord: 6.3ms | Allocations: 38598)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:34:10 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 77)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 12499)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 12887)
+
+
+Started GET "/users/confirmation?confirmation_token=[FILTERED]" for ::1 at 2021-04-09 13:34:12 +0500
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirmation_token` = 'mTB4Rzk-Dsu9jxm1KM2s' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`confirmed_at` = '2021-04-09 08:34:12', `users`.`updated_at` = '2021-04-09 08:34:12.424006' WHERE `users`.`id` = 3[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 11ms (ActiveRecord: 3.8ms | Allocations: 4953)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:34:12 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 263)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2503)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 14949)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 15552)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:34:38 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"arsalan.nawaz3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan.nawaz3@gmail.com' OR lower(email) = 'arsalan.nawaz3@gmail.com') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 1, `users`.`current_sign_in_at` = '2021-04-09 08:34:38', `users`.`last_sign_in_at` = '2021-04-09 08:34:38', `users`.`current_sign_in_ip` = '::1', `users`.`last_sign_in_ip` = '::1', `users`.`updated_at` = '2021-04-09 08:34:38.731190' WHERE `users`.`id` = 3[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 246ms (ActiveRecord: 5.9ms | Allocations: 5406)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:34:38 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 55.4ms | Allocations: 12494)
+Completed 200 OK in 56ms (Views: 56.0ms | ActiveRecord: 0.0ms | Allocations: 12885)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 13:34:40 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms | Allocations: 1822)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:34:40 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 12494)
+Completed 200 OK in 12ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 12880)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:34:44 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2497)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 14938)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 15533)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:59:10 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 690)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 228)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 264)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 4103)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 16728)
+Completed 200 OK in 37ms (Views: 22.8ms | ActiveRecord: 0.9ms | Allocations: 29336)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 13:59:24 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan nawaz' OR lower(email) = 'arsalan nawaz') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 8, `users`.`current_sign_in_at` = '2021-04-09 08:59:24', `users`.`last_sign_in_at` = '2021-04-09 08:32:50', `users`.`updated_at` = '2021-04-09 08:59:24.883845' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 243ms (ActiveRecord: 5.8ms | Allocations: 6667)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:59:24 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 12600)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 13660)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 13:59:33 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 1852)
+
+
+Started GET "/" for ::1 at 2021-04-09 13:59:33 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 12494)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 12881)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:59:40 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 263)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2503)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 14947)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 15545)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 13:59:57 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2505)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 14946)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 15489)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 14:00:19 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"arsalan.nawaz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan.nawaz@gmail.com' OR lower(email) = 'arsalan.nawaz@gmail.com') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mUser Update All (3.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`failed_attempts` = COALESCE(`users`.`failed_attempts`, 0) + 1 WHERE `users`.`id` = 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 401 Unauthorized in 239ms (ActiveRecord: 5.3ms | Allocations: 3579)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"arsalan.nawaz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2490)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 14937)
+Completed 200 OK in 244ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 15474)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 14:00:28 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"arsalan.nawaz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan.nawaz@gmail.com' OR lower(email) = 'arsalan.nawaz@gmail.com') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = '2021-04-09 09:00:29', `users`.`updated_at` = '2021-04-09 09:00:29.170780' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`failed_attempts` = 0, `users`.`updated_at` = '2021-04-09 09:00:29.179389' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 9, `users`.`current_sign_in_at` = '2021-04-09 09:00:29', `users`.`last_sign_in_at` = '2021-04-09 08:59:24', `users`.`updated_at` = '2021-04-09 09:00:29.185196' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 253ms (ActiveRecord: 10.9ms | Allocations: 12195)
+
+
+Started GET "/" for ::1 at 2021-04-09 14:00:29 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 12493)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 12883)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 14:00:31 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = NULL, `users`.`updated_at` = '2021-04-09 09:00:31.352326' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 4.8ms | Allocations: 4998)
+
+
+Started GET "/" for ::1 at 2021-04-09 14:00:31 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 12495)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 12882)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 14:00:37 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2497)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 14938)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 15535)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 14:01:04 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"arsalan.nawaz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan.nawaz@gmail.com' OR lower(email) = 'arsalan.nawaz@gmail.com') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = '2021-04-09 09:01:04', `users`.`updated_at` = '2021-04-09 09:01:04.686525' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 10, `users`.`current_sign_in_at` = '2021-04-09 09:01:04', `users`.`last_sign_in_at` = '2021-04-09 09:00:29', `users`.`updated_at` = '2021-04-09 09:01:04.694634' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 247ms (ActiveRecord: 8.3ms | Allocations: 8920)
+
+
+Started GET "/" for ::1 at 2021-04-09 14:01:04 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 12493)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 12883)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 14:01:06 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = NULL, `users`.`updated_at` = '2021-04-09 09:01:06.628118' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 5.0ms | Allocations: 4998)
+
+
+Started GET "/" for ::1 at 2021-04-09 14:01:06 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 12494)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 12880)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 14:01:13 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 14934)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 15529)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 14:01:38 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"arsalan.nawaz@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan.nawaz@gmail.com' OR lower(email) = 'arsalan.nawaz@gmail.com') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 11, `users`.`current_sign_in_at` = '2021-04-09 09:01:38', `users`.`last_sign_in_at` = '2021-04-09 09:01:04', `users`.`updated_at` = '2021-04-09 09:01:38.679583' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 242ms (ActiveRecord: 5.1ms | Allocations: 5379)
+
+
+Started GET "/" for ::1 at 2021-04-09 14:01:38 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 12493)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 12883)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 14:01:40 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms | Allocations: 1818)
+
+
+Started GET "/" for ::1 at 2021-04-09 14:01:40 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 12494)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 12880)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 14:01:47 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 14934)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 15529)
+
+
+Started GET "/" for ::1 at 2021-04-09 14:16:24 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+Started GET "/users/sign_in" for ::1 at 2021-04-09 14:16:24 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2621)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 24733)
+Completed 200 OK in 28ms (Views: 27.8ms | Allocations: 25205)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 25653)
+Completed 200 OK in 27ms (Views: 26.0ms | Allocations: 26279)
+
+
+Started GET "/" for ::1 at 2021-04-09 15:35:46 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 12487)
+Completed 200 OK in 11ms (Views: 10.3ms | Allocations: 12867)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 15:35:47 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4166)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 18246)
+Completed 200 OK in 19ms (Views: 17.6ms | Allocations: 18840)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 15:39:46 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 14934)
+Completed 200 OK in 13ms (Views: 12.8ms | Allocations: 15528)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 15:43:26 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 38.3ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 51.2ms | Allocations: 14935)
+Completed 200 OK in 53ms (Views: 51.7ms | Allocations: 15530)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 15:43:40 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan nawaz' OR lower(email) = 'arsalan nawaz') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = '2021-04-09 10:43:41', `users`.`updated_at` = '2021-04-09 10:43:41.046070' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 12, `users`.`current_sign_in_at` = '2021-04-09 10:43:41', `users`.`last_sign_in_at` = '2021-04-09 09:01:38', `users`.`updated_at` = '2021-04-09 10:43:41.054752' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 250ms (ActiveRecord: 9.3ms | Allocations: 9183)
+
+
+Started GET "/" for ::1 at 2021-04-09 15:43:41 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 12493)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 12883)
+
+
+Started GET "/" for ::1 at 2021-04-09 15:43:52 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 12487)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 12871)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 15:43:55 +0500
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms | Allocations: 1481)
+
+
+Started GET "/" for ::1 at 2021-04-09 15:43:55 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 12489)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 12882)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 15:44:01 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`remember_created_at` = NULL, `users`.`updated_at` = '2021-04-09 10:44:01.221537' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 5.3ms | Allocations: 4998)
+
+
+Started GET "/" for ::1 at 2021-04-09 15:44:01 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 12494)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 12880)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-04-09 15:44:14 +0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/" for ::1 at 2021-04-09 15:44:14 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 12489)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 12877)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 15:49:02 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2497)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 14938)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 15533)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 15:49:03 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 261)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 14934)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 15529)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-04-09 15:49:12 +0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"login"=>"Arsalan Nawaz", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (lower(full_name) = 'arsalan nawaz' OR lower(email) = 'arsalan nawaz') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `find_for_database_authentication'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 13, `users`.`current_sign_in_at` = '2021-04-09 10:49:12', `users`.`last_sign_in_at` = '2021-04-09 10:43:41', `users`.`updated_at` = '2021-04-09 10:49:12.748271' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 243ms (ActiveRecord: 5.9ms | Allocations: 5380)
+
+
+Started GET "/" for ::1 at 2021-04-09 15:49:12 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 12493)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 12883)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-04-09 15:49:25 +0500
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms | Allocations: 1480)
+
+
+Started GET "/" for ::1 at 2021-04-09 15:49:25 +0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 12489)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 12881)
+
+
