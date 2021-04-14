@@ -1,6 +1,5 @@
 <%= form_for(@user, :url => { :action => "update_password" } ) do |f| %>
-
-<h2>Change My Password<br /></h2>
+  <h2>Change My Password<br /></h2>
   <div class="form-group">
     <%= f.label :password %><br />
     <%= f.password_field :password, :autocomplete => "off"  %>
