@@ -1,13 +1,13 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <p><%= f.label :login %><br />
-    <%= f.text_field :login %></p>
+  <div class="field clearfix">
+    <p class="clearfix"><%= f.label :login %></p>
+    <%= f.text_field :login %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
+  <div class="field clearfix">
+    <p class="clearfix"><%= f.label :password %></p>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
@@ -32,49 +32,44 @@
 <div class="collapse" id="SignUpCollapse">
   <h2>Sign up</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :full_name %><br />
-    <%= f.text_field :full_name %>
-  </div>
+    <div class="field clearfix">
+      <%= f.label :full_name %>
+      <%= f.text_field :full_name %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field clearfix">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field clearfix">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-  <p>
-    The password should be at least eight characters long. 
-    <br>
-    To make it stronger, use upper and lower case letters,
-    <br> 
-    numbers, and symbols like ! " ? $ % ^ & ).
-  </p>
+    <p class="clearfix">
+      The password should be at least eight characters long. 
+      To make it stronger, use upper and lower case letters,
+      numbers, and symbols like ! " ? $ % ^ & ).
+    </p>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field clearfix">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
 
   <% end %>
   <%= render "devise/shared/links" %>
 
-  <p>
+  <p class="clearfix">
     Your personal data will be used to support your experience
-    <br> 
     throughout this website, to manage access to your account,
-    <br> 
     and for other purposes described in our 
     <a href="http://brentmark-prod.square63.net//privacy-policy/"target="_blank">privacy policy
     </a>.
