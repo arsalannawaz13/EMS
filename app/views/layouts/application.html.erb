@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      .nav-item
-      {
-        margin: 8px;
-        margin-top: 0px;
-      }
-    </style>
-
     <title>EMS</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -39,7 +31,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link">
-                <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
               </a>
             </li>
           <% else %>
