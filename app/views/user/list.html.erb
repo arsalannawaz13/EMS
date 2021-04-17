@@ -1,0 +1,39 @@
+<div class="jumbotron text-center">
+  <h1>Users List</h1>
+</div>
+
+<div class="page-content page-container" id="page-content">
+  <div class="d-flex justify-content-center">
+    <div class="card user-card-full">
+      <table class="table">
+        <%= form_tag(users_list_path, :method => "get", class: 'navbar-form navbar-left') do %> 
+          <div class="input-group">  
+            <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+            <div class="input-group-btn">  
+              <%= button_tag "Search", class: 'btn btn-info glyphicon glyphicon-search', name: nil %>  
+            </div>  
+          </div> 
+        <% end %>
+        <thead>
+          <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Admin Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @results.each do |u| %>
+            <tr>
+              <td> <%= u.full_name %> </td>
+              <td> <%= u.email %> </td>
+              <td> <%= u.admin %> </td>
+              <td> <%= link_to 'Show', user_path(u) %> </td>
+              <td> <%= link_to 'Edit', users_update_user_path(u) %> </td>
+              <td> <%= link_to "Delete", users_destroy_path(u.id), data: { confirm: "Are you sure?" }, method: :delete %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
