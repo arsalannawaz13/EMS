@@ -13,6 +13,14 @@ class User < ApplicationRecord
     full_name || email
   end
 
+  def self.search(search)
+    if search
+      where("lower(full_name) LIKE ? or lower(email) LIKE ? or lower(admin) LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      all
+    end
+  end
+
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
