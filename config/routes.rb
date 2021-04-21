@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
+  get 'admin/users/list', to: 'admin/users#list'
+  namespace :admin do
+    resources :users
+  end
+
   resources :users, only: [:edit, :show] do
     collection do
       patch 'update_password'
