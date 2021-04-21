@@ -13,9 +13,9 @@ class User < ApplicationRecord
     full_name || email
   end
 
-  def self.search(search)
-    if search
-      where("lower(full_name) LIKE ? or lower(email) LIKE ? or lower(admin) LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  def self.search(term)
+    if term
+      where("lower(full_name) LIKE ? or lower(email) LIKE ? or lower(admin) LIKE ?", "%#{term}%", "%#{term}%", "%#{term}%")
     else
       all
     end

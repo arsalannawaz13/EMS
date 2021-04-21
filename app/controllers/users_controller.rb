@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user, only: [:show, :edit]
 
   def show
-    @user = User.find(params[:id])
     render "user/show"
   end
 
@@ -25,5 +25,9 @@ class UsersController < ApplicationController
   def user_params
     # NOTE: Using `strong_parameters` gem
     params.require(:user).permit(:password, :password_confirmation)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

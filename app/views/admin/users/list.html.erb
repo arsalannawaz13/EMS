@@ -6,12 +6,12 @@
   <div class="d-flex justify-content-center">
     <div class="card user-card-full">
       <table class="table">
-        <%= form_with method: :get, local: true do |f| %>
+        <%= form_with method: :get, local: true do |form| %>
           <div class="input-group justify-content-center">
             <div class="input-group-btn">
-              <%= f.submit 'Search USERS' ,class:'btn btn-success'%>
+              <%= form.submit 'Search USERS' ,class:'btn btn-success'%>
             </div>
-            <%= f.text_field :search,value: params[:search] %>
+            <%= form.text_field :term,value: params[:term] %>
             <div class="input-group-btn">
               <%= link_to 'Download CSV', admin_users_path(format: :csv) ,class: 'btn btn-success'%>
             </div>
@@ -31,8 +31,8 @@
               <td> <%= user.email %> </td>
               <td> <%= user.admin %> </td>
               <td> <%= link_to 'Show', admin_user_path(user) %> </td>
-              <td> <%= link_to 'Edit', admin_users_update_user_path(user) %> </td>
-              <td> <%= link_to "Delete", admin_users_destroy_path(user.id), data: { confirm: "Are you sure?" }, method: :delete %> </td>
+              <td> <%= link_to 'Edit', edit_admin_user_path(user) %> </td>
+              <td> <%= link_to "Delete", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %> </td>
             </tr>
           <% end %>
         </tbody>

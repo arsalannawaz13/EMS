@@ -5,10 +5,6 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get 'admin/users/list', to: 'admin/users#list'
-  get 'admin/users/update_user_details'
-  get 'admin/users/update_user', to: 'admin/users#update_user'
-  patch 'admin/users/update_password', to: 'admin/users#update_password'
-  delete 'admin/users/destroy'
   namespace :admin do
     resources :users
   end
