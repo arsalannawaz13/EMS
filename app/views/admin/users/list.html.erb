@@ -25,14 +25,14 @@
           </tr>
         </thead>
         <tbody>
-          <% @results.each do |u| %>
+          <% @results.each do |user| %>
             <tr>
-              <td> <%= u.full_name %> </td>
-              <td> <%= u.email %> </td>
-              <td> <%= u.admin %> </td>
-              <td> <%= link_to 'Show', admin_user_path(u) %> </td>
-              <td> <%= link_to 'Edit', admin_users_update_user_path(u) %> </td>
-              <td> <%= link_to "Delete", admin_users_destroy_path(u.id), data: { confirm: "Are you sure?" }, method: :delete %> </td>
+              <td> <%= user.full_name %> </td>
+              <td> <%= user.email %> </td>
+              <td> <%= user.admin %> </td>
+              <td> <%= link_to 'Show', admin_user_path(user) %> </td>
+              <td> <%= link_to 'Edit', admin_users_update_user_path(user) %> </td>
+              <td> <%= link_to "Delete", admin_users_destroy_path(user.id), data: { confirm: "Are you sure?" }, method: :delete %> </td>
             </tr>
           <% end %>
         </tbody>

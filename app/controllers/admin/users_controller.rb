@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_user, except: [:index, :update_password, :show]
   helper_method :sort_column, :sort_direction
 
   def list
@@ -20,7 +21,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def update_user_details
-    @user = User.find(params[:format])
     if @user.update(user_update_params)
       flash[:notice] = 'User updated!'
       redirect_to admin_users_list_path
@@ -31,7 +31,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def update_user
-    @user = User.find(params[:format])
     render "admin/users/update_user"
   end
 
@@ -41,13 +40,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    @users = User.find(params[:format])
-    @users.destroy
+    @user.destroy
     redirect_to admin_users_list_path, notice: "User deleted successfully"
-  end
-
-  def edit
-    render "admin/users/edit"
   end
 
   def update_password
@@ -78,5 +72,9 @@ class Admin::UsersController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+  def find_user
+    @user = User.find(params[:format])
   end
 end
