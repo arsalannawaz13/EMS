@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'admin/users/list', to: 'admin/users#list'
   namespace :admin do
     resources :users
+    resources :categories
   end
 
   resources :users, only: [:edit, :show] do

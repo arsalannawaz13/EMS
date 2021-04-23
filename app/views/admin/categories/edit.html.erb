@@ -1,0 +1,20 @@
+<div class='container float-right'>
+  <div class='row align-items-center'>
+    <div class='col-5'>
+      <h2>Edit Category</h2>
+
+      <%= form_for(@category, url:{action: "update"}) do |form| %>
+        <div class="field">
+          <%= form.label :title %>
+          <%= form.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div class="actions mt-3">
+          <p><%= form.submit "Update", class: 'btn btn-primary'%></p>
+        </div>
+      <% end %>
+
+      <%= link_to "Back", :back, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

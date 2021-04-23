@@ -1,0 +1,20 @@
+<div class="jumbotron text-center">
+  <h1>Category Details</h1>
+  <%= link_to 'Back to List', admin_categories_path %>
+</div>
+<div class="page-content page-container" id="page-content">
+  <div class="d-flex justify-content-center">
+    <div class="card user-card-full">
+      <div class="row">
+        <div class="col-sm-8">
+          <p class="m-b-10 f-w-600">ID</p>
+          <h6 class="text-muted f-w-400"><%= @category.id %></h6>
+        </div>
+        <div class="col-sm-8">
+          <p class="m-b-10 f-w-600">Title</p>
+          <h6 class="text-muted f-w-400"><%= @category.title %></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
