@@ -29,6 +29,13 @@
                 <%= link_to "My Profile", user_path(current_user) %>
               </a>
             </li>
+            <% if !(current_user.admin?) %>
+            <li class="nav-item">
+              <a class="nav-link">
+                <%= link_to "Products", products_path %>
+              </a>
+            </li>
+            <% end %>
             <% if current_user.admin? %>
               <li class="nav-item">
                 <a class="nav-link">
@@ -38,6 +45,11 @@
               <li class="nav-item">
                 <a class="nav-link">
                   <%= link_to "List Categories", admin_categories_path %>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">
+                  <%= link_to "List Products", admin_products_path %>
                 </a>
               </li>
             <% end %>

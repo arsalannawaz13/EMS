@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :categories
+    resources :products
   end
 
   resources :users, only: [:edit, :show] do
@@ -15,4 +16,7 @@ Rails.application.routes.draw do
       patch 'update_password'
     end
   end
+
+  resources :products, only: [:index, :show]
+
 end

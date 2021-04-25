@@ -1,0 +1,35 @@
+<div class='container float-right'>
+  <div class='row align-items-center'>
+    <div class='col-5'>
+      <h2>Edit Product</h2>
+
+      <%= form_for(@product, url:{action: "update"}) do |form| %>
+        <div class="field">
+          <%= form.label :title %>
+          <%= form.text_field :title, class: 'form-control' %>
+        </div>
+        <div class="field">
+          <p> Value </p>
+          <%= form.text_field :price, class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= form.label :description %>
+          <%= form.text_field :description, class: 'form-control' %>
+        </div>
+        <div class="field">
+          <p> Status </p>
+          <%= form.select :status, options_for_select(Product::STATUS), class: 'form-control' %>
+        </div>
+        <div class="field">
+          <p> Category </p>
+          <%= form.select :product_category_id, options_for_select(@categories.pluck(:title)), class: 'form-control' %>
+        </div>
+        <div class="actions mt-3">
+          <p><%= form.submit "Update", class: 'btn btn-primary'%></p>
+        </div>
+      <% end %>
+
+      <%= link_to "Back", :back, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

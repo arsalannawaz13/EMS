@@ -1,5 +1,5 @@
 <div class= "jumbotron text-center">
-  <h2>Add New Category</h2>
+  <h2>New Category</h2>
 </div>
 
 <div class="page-content page-container" id="page-content">
@@ -8,12 +8,12 @@
       <div class="row-xs-9">
         <%= form_with(url: admin_categories_path(@category), local: true) do |form| %>
           <div class="col-xs-9">
-            <%= form.label :title %>
+            <p>Name</p>
             <%= form.text_field :title, class: 'form-control'%>
           </div>
           <div class="actions mt-3">
-            <%= form.submit "Add Category", class: 'btn btn-primary'%>
-            <%= link_to "Back to List", :back, class: 'btn btn-primary' %>
+            <%= link_to "BACK", :back, class: 'btn btn-primary' %>
+            <%= form.submit "CREATE CATEGORY", class: 'btn btn-primary'%>
           </div>
         <% end %>
       </div>
