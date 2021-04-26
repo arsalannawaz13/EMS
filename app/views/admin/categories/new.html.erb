@@ -9,7 +9,7 @@
         <%= form_with(url: admin_categories_path(@category), local: true) do |form| %>
           <div class="col-xs-9">
             <p>Name</p>
-            <%= form.text_field :title, class: 'form-control'%>
+            <%= form.text_field "product_category[title]", class: 'form-control'%>
           </div>
           <div class="actions mt-3">
             <%= link_to "BACK", :back, class: 'btn btn-primary' %>

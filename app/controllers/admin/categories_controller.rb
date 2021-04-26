@@ -6,11 +6,13 @@ class Admin::CategoriesController < ApplicationController
     @categories= ProductCategory.all
   end
 
-  def new; end
+  def new
+    @category = ProductCategory.new
+  end
 
   def create
-    @category = ProductCategory.new(new_category_params)
-    @category.save
+    @category = ProductCategory.new(category_params)
+    @category.save!
     redirect_to admin_categories_path
   end
 
@@ -19,7 +21,7 @@ class Admin::CategoriesController < ApplicationController
   def edit; end
 
   def update
-    if @category.update(update_category_params)
+    if @category.update(category_params)
       flash[:notice] = 'Category updated!'
       redirect_to admin_categories_path
     else
@@ -36,11 +38,7 @@ class Admin::CategoriesController < ApplicationController
 
   private
 
-  def new_category_params
-    params.permit(:title)
-  end
-
-  def update_category_params
+  def category_params
     params.require(:product_category).permit(:title)
   end
 
