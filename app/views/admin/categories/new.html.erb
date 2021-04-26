@@ -1,0 +1,22 @@
+<div class= "jumbotron text-center">
+  <h2>New Category</h2>
+</div>
+
+<div class="page-content page-container" id="page-content">
+  <div class="d-flex justify-content-center">
+    <div class="card user-card-full">
+      <div class="row-xs-9">
+        <%= form_with(url: admin_categories_path(@category), local: true) do |form| %>
+          <div class="col-xs-9">
+            <p>Name</p>
+            <%= form.text_field "product_category[title]", class: 'form-control'%>
+          </div>
+          <div class="actions mt-3">
+            <%= link_to "BACK", :back, class: 'btn btn-primary' %>
+            <%= form.submit "CREATE CATEGORY", class: 'btn btn-primary'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

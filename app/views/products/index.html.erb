@@ -1,0 +1,18 @@
+<div class="jumbotron text-center">
+  <h1>Products</h1>
+</div>
+
+<dix class="col-md-4">
+  <div class ="row">
+    <% @products.each do |product| %>
+      <div class="card card2">
+        <img><%= image_tag(product.product_image) %></img>
+        <div class="card-body">
+          <h5 class="card-title"><%= product.title %></h5>
+          <p class="card-text"><%= number_to_currency(product.price, :unit => "$") %></p>
+          <a href="#" class="btn btn-primary">Add To Cart</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</dix>

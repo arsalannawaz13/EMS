@@ -1,0 +1,42 @@
+<div class= "jumbotron text-center">
+  <h2>New Product</h2>
+</div>
+
+<div class="page-content page-container" id="page-content">
+  <div class="d-flex justify-content-center">
+    <div class="card user-card-full">
+      <div class="row-xs-9">
+        <%= form_for [:admin, @product] do |form| %>
+          <div class="col-xs-9">
+            <p>Title</p>
+            <%= form.text_field :title, class: 'form-control'%>
+          </div>
+          <div class="col-xs-9">
+            <p>Price</p>
+            <%= form.text_field :price, class: 'form-control'%>
+          </div>
+          <div class="col-xs-9">
+            <p>Description</p>
+            <%= form.text_field :description, class: 'form-control'%>
+          </div>
+          <div class="col-xs-9">
+            <p>Status</p>
+            <%= form.select :status, options_for_select(Product::STATUS), class: 'form-control'%>
+          </div>
+          <div class="col-xs-9">
+            <p>Categories</p>
+            <%= form.select :product_category_id, options_for_select(@categories.pluck(:title)), class: 'form-control'%>
+          </div>
+          <div class="col-xs-9">
+            <p>Image</p>
+            <%= form.file_field :product_image, class: 'form-control'%>
+          </div>
+          <div class="actions mt-3">
+            <%= link_to "BACK", :back, class: 'btn btn-primary' %>
+            <%= form.submit "ADD PRODUCT", class: 'btn btn-primary'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
