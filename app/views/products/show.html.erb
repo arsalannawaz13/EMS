@@ -1,0 +1,28 @@
+<div class="jumbotron text-center">
+  <h1>My Profile</h1>
+  <p><%= link_to "Back to Products", products_path %></p>
+</div>
+<div class="page-content page-container" id="page-content">
+  <div class="d-flex justify-content-center">
+    <div class="card user-card-full">
+      <div class="row">
+        <div class="col-sm-8 card_show">
+          <img><%= image_tag(@product.product_image) %></img>
+        </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <p class="m-b-10 f-w-600">Name</p>
+          <h6 class="text-muted f-w-400"><%= @product.title %></h6>
+        </div>
+        <div class="col-sm-8">
+          <p class="m-b-10 f-w-600">Price</p>
+          <h6 class="text-muted f-w-400"><%= @product.price %></h6>
+        </div>
+        <div class="col-sm-8">
+          <p class="m-b-10 f-w-600">Details</p>
+          <h6 class="text-muted f-w-400"><%= @product.description %></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

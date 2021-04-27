@@ -1,0 +1,14 @@
+<% @order_items.each do |item| %>
+  <h3><%= item.product.title %></h3>
+  <h5><%= number_to_currency(item.product.price) %></h5>
+
+  <%= form_for item, remote: true do |form| %>
+     <%= form.hidden_field :product_id, value: item.product.id %>
+     <%= form.number_field :quantity, value: item.quantity.to_i %>
+     <%= form.submit "Update Cart" %>
+     <%= link_to "Remove Items", order_item_path(item), method: :delete, remote: true %>
+  <% end %>
+  <h2>Subtotal: <%= number_to_currency(item.total) %></h2>
+<% end %>
+
+<h3> Cart Subtotal: <%= number_to_currency(current_order.subtotal) %> </h3>
