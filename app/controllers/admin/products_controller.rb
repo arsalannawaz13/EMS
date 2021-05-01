@@ -12,8 +12,6 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    product_category_id = ProductCategory.find_by(title: params[:product][:product_category_id]).id
-    params[:product][:product_category_id] = product_category_id
     @product = Product.new(product_params)
     @product.save!
     redirect_to admin_products_path
@@ -26,8 +24,6 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
-    product_category_id = ProductCategory.find_by(title: params[:product][:product_category_id]).id
-    params[:product][:product_category_id] = product_category_id
     if @product.update(product_params)
       flash[:notice] = 'Product updated!'
       redirect_to admin_products_path

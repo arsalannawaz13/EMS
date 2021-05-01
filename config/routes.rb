@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { invitations: 'devise/invitations' }
+  devise_for :users, controllers: { invitations: 'devise/invitations', sessions: "user/session" }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root to: "home#index"
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :order_items
-  resource :cards, only: [:show]
+  resource :cards, only: [:show, :update]
   resources :products, only: [:index, :show]
+  resource :orders, only: [:update]
 end

@@ -22,7 +22,7 @@
         </div>
         <div class="field">
           <p> Category </p>
-          <%= form.select :product_category_id, options_for_select(@categories.pluck(:title)), class: 'form-control' %>
+          <%= form.select :product_category_id, options_for_select(@categories.pluck(:title, :id)), class: 'form-control' %>
         </div>
         <div class="actions mt-3">
           <p><%= form.submit "Update", class: 'btn btn-primary'%></p>

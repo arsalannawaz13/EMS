@@ -1,14 +1,122 @@
-<% @order_items.each do |item| %>
-  <h3><%= item.product.title %></h3>
-  <h5><%= number_to_currency(item.product.price) %></h5>
+<div class="jumbotron" type="button" data-toggle="collapse" data-target="#OrderSummaryCollapse" aria-expanded="false" aria-controls="OrderSummaryCollapse">
+  <h2>Order Summary</h2>
+</div>
 
-  <%= form_for item, remote: true do |form| %>
-     <%= form.hidden_field :product_id, value: item.product.id %>
-     <%= form.number_field :quantity, value: item.quantity.to_i %>
-     <%= form.submit "Update Cart" %>
-     <%= link_to "Remove Items", order_item_path(item), method: :delete, remote: true %>
-  <% end %>
-  <h2>Subtotal: <%= number_to_currency(item.total) %></h2>
-<% end %>
+<div class="collapse" id="OrderSummaryCollapse">
+  <div class="d-flex justify-content-center">
+    <div class="card user-card-full">
+      <table class="table">
+        <thead>
+          <tr>
+            <th> PRODUCT </th>
+            <th> UNIT PRICE </th>
+            <th> QUANTITY </th>
+            <th> PRICE </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order_items.each do |item| %>
+            <tr>
+              <td> <%= item.product.title %> </td>
+              <td> <%= number_to_currency(item.product.price) %> </td>
+              <%= form_for item, remote: true do |form| %>
+                <%= form.hidden_field :product_id, value: item.product.id %>
+                <td><%= form.number_field :quantity, value: item.quantity.to_i %>
+                <%= form.submit "Update Cart" %></td>
+                <td><%= number_to_currency(item.total) %></td>
+                <td><%= link_to "Delete", order_item_path(item), method: :delete, remote: true %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <h5> Total <%= current_order.order_items.size%> item(s) <%=number_to_currency(current_order.subtotal) %>
+        <div type="button" data-toggle="collapse" data-target="#CustomerInfoCollapse" aria-expanded="false" aria-controls="CustomerInfoCollapse">
+          <div type="button" data-toggle="collapse" data-target="#OrderSummaryCollapse" aria-expanded="false" aria-controls="OrderSummaryCollapse">
+            <button class = "float-right">PROCEED TO CHECKOUT</button>
+          </div>
+        </div>
+      </h5>
+    </div>
+  </div>
+</div>
 
-<h3> Cart Subtotal: <%= number_to_currency(current_order.subtotal) %> </h3>
+<div class="jumbotron">
+  <h2>Customer Information</h2>
+</div>
+
+<div class="collapse" id="CustomerInfoCollapse">
+  <div class="d-flex justify-content-center">
+    <div class="card user-card-full">
+      <table class="table">
+        <thead>
+          <tr>
+            <th> Full Name </th>
+            <th> Address Line </th>
+            <th> City </th>
+            <th> Country </th>
+            <th> Zip Code </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= @order.user.full_name %> </td>
+            <%= form_for(@order, url:{action: "update"}) do |order| %>
+              <td> <%= order.text_field :address, class: 'form-control' %> </td>
+              <td> <%= order.text_field :city, class: 'form-control' %> </td>
+              <td> <%= order.text_field :country, class: 'form-control' %> </td>
+              <td> <%= order.text_field :zip_code, class: 'form-control' %> </td>
+          </tr>
+        </tbody>
+      </table>
+      <div type="button" data-toggle="collapse" data-target="#CustomerInfoCollapse" aria-expanded="false" aria-controls="CustomerInfoCollapse">
+        <div type="button" data-toggle="collapse" data-target="#PaymentInfoCollapse" aria-expanded="false" aria-controls="PaymentInfoCollapse">
+          <%= order.submit "CONTINUE", class: 'btn btn-primary float-right'%>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2>Payment Information</h2>
+</div>
+
+<div class="collapse" id="PaymentInfoCollapse">
+  <div class="d-flex justify-content-center">
+    <div class="card user-card-full">
+      <div class="jumbotron">
+        <h3>Please Select your preferref payment method</h3>
+          <div class="field">
+            <%= form_for(@order, url:{action: "update"}) do |order| %>
+              <%= order.label :payment_method %><br />
+              <%= order.label :payment_method, "Cash On Delivery", value: "Cash-On-Delivery"  %>
+              <%= order.radio_button :payment_method, "Cash-On-Delivery" %>
+              <%= order.label :payment_method, "Check", value: "Check"  %>
+              <%= order.radio_button :payment_method, "Check", :checked => true %>
+          </div>
+          <div type="button" data-toggle="collapse" data-target="#PaymentInfoCollapse" aria-expanded="false" aria-controls="PaymentInfoCollapse">
+            <div type="button" data-toggle="collapse" data-target="#ConfirmationCollapse" aria-expanded="false" aria-controls="ConfirmationCollapse">
+              <%= order.submit "CONTINUE", class: 'btn btn-primary float-right'%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron" type="button" data-toggle="collapse" data-target="#ConfirmationCollapse" aria-expanded="false" aria-controls="ConfirmationCollapse">
+  <h2>Confirmation</h2>
+</div>
+
+<div class="collapse" id="ConfirmationCollapse">
+  <div class="d-flex justify-content-center">
+    <div class="card user-card-full">
+      <h5>Please press the button below to confirm your order:- </h5>
+      <h6>Please double check the information provided above before proceeding </h6>
+      <%= link_to 'PLACE ORDER', orders_path(current_order), method: "patch", class: 'btn btn-primary float-right' %>
+    </div>
+  </div>
+</div>

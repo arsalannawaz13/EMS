@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_27_082011) do
+ActiveRecord::Schema.define(version: 2021_04_29_075124) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 2021_04_27_082011) do
     t.decimal "total", precision: 10
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "address"
+    t.string "city"
+    t.string "country"
+    t.integer "zip_code"
+    t.integer "user_id"
+    t.string "payment_method", default: "Cash-On-Delivery"
+    t.boolean "status", default: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "product_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
