@@ -22,7 +22,7 @@
               <td> <%= number_to_currency(product.price) %> </td>
               <td> <%= link_to 'Show', admin_product_path(product) %> </td>
               <td> <%= link_to 'Edit', edit_admin_product_path(product) %> </td>
-              <td> <%= link_to "Delete", admin_product_path(product), data: { confirm: "Are you sure?" }, method: :delete %></td>
+              <td> <%= link_to "Delete", admin_product_path(product), data: { swal_msg: 'Are you sure you wish to delete this entity?' }, method: :delete, class: 'swal' %></td>
             </tr>
           <% end %>
         </tbody>

@@ -3,6 +3,8 @@ class Product < ApplicationRecord
   has_one_attached :product_image
   has_many :order_items
 
+  scope :published, -> { where("status = 'publish'") }
+
   STATUS = %w( publish draft pending ).freeze
   validates :status, presence: true, inclusion: { in: STATUS }
 end

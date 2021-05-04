@@ -13,9 +13,9 @@ class CardsController < ApplicationController
   def update
     @order = current_order
     if @order.update(order_params)
-      flash[:notice] = 'Customer Info updated!'
+      flash[:notice] = 'Product updated!'
     else
-      flash[:error] = 'Failed to Add Customer Info!'
+      flash[:error] = 'Failed to update!'
     end
   end
 

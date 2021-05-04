@@ -12,8 +12,13 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category = ProductCategory.new(category_params)
-    @category.save!
-    redirect_to admin_categories_path
+    if @category.save!
+      flash[:notice] = 'Category Created!'
+      redirect_to admin_categories_path
+    else
+      flash[:error] = 'Failed to create Category!'
+      new_admin_category_path
+    end
   end
 
   def show; end
@@ -31,10 +36,14 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy!
-    redirect_to admin_categories_path, notice: "Category deleted successfully"
+    if (Product.where(product_category_id: @category)).any?
+      flash[:notice] = 'First delete all products with this category!'
+      redirect_to admin_categories_path
+    else
+      @category.destroy!
+      redirect_to admin_categories_path, notice: "Category deleted successfully"
+    end
   end
-
 
   private
 

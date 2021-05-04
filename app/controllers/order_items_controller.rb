@@ -3,7 +3,13 @@ class OrderItemsController < ApplicationController
   before_action :set_order_item, except: [:create]
 
   def create
-    @order_item = @order.order_items.new(order_params)
+    index = @order.order_items.pluck(:product_id).index(params[:order_item][:product_id].to_i)
+    if (index)
+      @order.order_items[index].quantity += params[:order_item][:quantity].to_i
+      @order.order_items[index].save!
+    else
+      @order_item = @order.order_items.new(order_params)
+    end
     @order.user_id = current_user.id
     @order.save!
     session[:order_id] = @order.id
