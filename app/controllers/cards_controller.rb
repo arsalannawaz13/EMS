@@ -1,7 +1,6 @@
 class CardsController < ApplicationController
-
   def show
-    if !(current_order.order_items.any?)
+    if (current_order.order_items.empty?)
       flash[:notice] = 'Your Cart is Empty'
       redirect_to products_path
     else

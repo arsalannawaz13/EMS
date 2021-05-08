@@ -13,7 +13,7 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save!
+    if @product.save
       flash[:notice] = 'Product Created!'
     else
       flash[:error] = 'Failed to create Product!'
@@ -36,7 +36,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    if @product.destroy!
+    if @product.destroy
       flash[:notice] = "Product deleted successfully"
     else
       flash[:error] = 'Failed to delete Product!'

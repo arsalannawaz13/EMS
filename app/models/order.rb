@@ -7,6 +7,11 @@ class Order < ApplicationRecord
   PAYMENT = %w( Cash-On-Delivery Check ).freeze
   validates :payment_method, presence: true, inclusion: { in: PAYMENT }
 
+  enum status: {
+    pending: 0,
+    confirmed: 1
+  }
+
   def subtotal
     order_items.collect{|order_item| order_item.valid? ? order_item.unit_price * order_item.quantity : 0}.sum
   end

@@ -12,7 +12,7 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category = ProductCategory.new(category_params)
-    if @category.save!
+    if @category.save
       flash[:notice] = 'Category Created!'
       redirect_to admin_categories_path
     else

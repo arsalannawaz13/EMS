@@ -32,7 +32,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy!
+    @user.destroy
     redirect_to admin_users_list_path, notice: "User deleted successfully"
   end
 
