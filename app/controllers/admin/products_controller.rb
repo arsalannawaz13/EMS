@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product, except: [:index, :new, :create]
+  before_action :set_categories, only: [:edit, :new]
 
   def index
     @products= Product.all
@@ -8,26 +9,23 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @categories = ProductCategory.all
   end
 
   def create
-    product_category_id = ProductCategory.find_by(title: params[:product][:product_category_id]).id
-    params[:product][:product_category_id] = product_category_id
     @product = Product.new(product_params)
-    @product.save!
+    if @product.save
+      flash[:notice] = 'Product Created!'
+    else
+      flash[:error] = 'Failed to create Product!'
+    end
     redirect_to admin_products_path
   end
 
   def show; end
 
-  def edit
-    @categories = ProductCategory.all
-  end
+  def edit; end
 
   def update
-    product_category_id = ProductCategory.find_by(title: params[:product][:product_category_id]).id
-    params[:product][:product_category_id] = product_category_id
     if @product.update(product_params)
       flash[:notice] = 'Product updated!'
       redirect_to admin_products_path
@@ -38,10 +36,13 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy!
-    redirect_to admin_products_path, notice: "Product deleted successfully"
+    if @product.destroy
+      flash[:notice] = "Product deleted successfully"
+    else
+      flash[:error] = 'Failed to delete Product!'
+    end
+    redirect_to admin_products_path
   end
-
 
   private
 
@@ -51,5 +52,9 @@ class Admin::ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_categories
+    @categories = ProductCategory.all
   end
 end

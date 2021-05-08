@@ -1,0 +1,42 @@
+<div class="jumbotron text-center">
+  <h1>Orders</h1>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div class="container">
+    <% @orders.each do |order| %>
+      <div class="row">
+        <div class="col-12">
+          <div class="card user-card-full">
+            <p> Name: <%= order.user.full_name %>
+            Address: <%= order.address %>
+            <%= order.city %>
+            <%= order.country %>
+            <%= order.zip_code %>
+            Payment Method: <%= order.payment_method %></p>
+            <% order.order_items.each do |item| %>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th> Product </th>
+                    <th> Unit Price </th>
+                    <th> Quantity </th>
+                    <th> Price </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> <%= item.product.title %> </td>
+                    <td> <%= number_to_currency(item.product.price) %> </td>
+                    <td><%= item.quantity.to_i %></td>
+                    <td><%= number_to_currency(item.total) %></td>
+                  </tr>
+            <% end %>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

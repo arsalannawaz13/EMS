@@ -1,76 +1,43 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <p><%= f.label :login %></p>
-    <%= f.text_field :login %>
-  </div>
-
-  <div class="field">
-    <p><%= f.label :password %></p>
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="container">
+  <div class="card">
+    <div class="card-header text-center text-primary">
+      <h3>Login</h3>
     </div>
-  <% end %>
+    <div class="card-body">
+      <div class="parsley-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <p> Full Name or Email </p>
+            <p><%= f.text_field :login, class: 'form-control', autofocus: true %></p>
+          </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+          <div class="form-group">
+            <%= f.label :password %>
+            <p><%= f.password_field :password, autocomplete: "current-password", class: 'form-control', autofocus: true %></p>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="form-check form-group">
+              <p><%= f.check_box :remember_me %>
+              <%= f.label :remember_me %></p>
+            </div>
+          <% end %>
+
+          <div class="text-center">
+            <p><%= f.submit "Log in", class: "btn btn-primary" %></p>
+            <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
-
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#SignUpCollapse" aria-expanded="false" aria-controls="SignUpCollapse">
-  NEW TO EMS
-</button>
-
+<div class="text-center mt-5">
+  <button class="btn btn-primary text-center" type="button" data-toggle="collapse" data-target="#SignUpCollapse" aria-expanded="false" aria-controls="SignUpCollapse">
+    NEW TO EMS
+  </button>
+</div>
 <div class="collapse" id="SignUpCollapse">
-  <h2>Sign up</h2>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="field">
-      <p><%= f.label :full_name %></p>
-      <%= f.text_field :full_name %>
-    </div>
-
-    <div class="field">
-      <p><%= f.label :email %></p>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <p><%= f.label :password %></p>
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <p>
-      The password should be at least eight characters long. 
-      To make it stronger, use upper and lower case letters,
-      numbers, and symbols like ! " ? $ % ^ & ).
-    </p>
-
-    <div class="field">
-      <p><%= f.label :password_confirmation %></p>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-
-  <% end %>
-
-  <p>
-    Your personal data will be used to support your experience
-    throughout this website, to manage access to your account,
-    and for other purposes described in our 
-    <a href="http://brentmark-prod.square63.net//privacy-policy/"target="_blank">privacy policy
-    </a>.
-  </p>
+  <%= render 'devise/registrations/form' %>
 </div>

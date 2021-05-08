@@ -25,7 +25,7 @@
           </div>
           <div class="col-xs-9">
             <p>Categories</p>
-            <%= form.select :product_category_id, options_for_select(@categories.pluck(:title)), class: 'form-control'%>
+            <%= form.select :product_category_id, options_for_select(@categories.pluck(:title, :id)), class: 'form-control'%>
           </div>
           <div class="col-xs-9">
             <p>Image</p>
